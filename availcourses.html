@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Courses</title>
+    <script type="text/javascript" src="availshow.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 900px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #87cefa; /* Light Blue */
+            color: #333;
+        }
+
+        td {
+            background-color: #eaf6ff; /* Soft blue for rows */
+        }
+
+        tr:nth-child(even) td {
+            background-color: #d6ecff;
+        }
+
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            th {
+                text-align: left;
+            }
+
+            td {
+                text-align: left;
+                padding-left: 50%;
+                position: relative;
+            }
+
+            td::before {
+                position: absolute;
+                left: 10px;
+                top: 15px;
+                font-weight: bold;
+            }
+
+            td:nth-child(1)::before { content: "Course Id"; }
+            td:nth-child(2)::before { content: "Course Name"; }
+            td:nth-child(3)::before { content: "Trainer Name"; }
+            td:nth-child(4)::before { content: "Duration"; }
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th width="100">Course Id</th>
+                <th width="200">Course Name</th>
+                <th width="200">Trainer Name</th>
+                <th width="200">Duration (Weeks)</th>
+            </tr>
+        </thead>
+        <tbody id="coursetable"></tbody> <!-- Table body where rows will be inserted -->
+    </table>
+
+    <script>
+        window.onload = function () {
+            showCourses();
+        };
+    </script>
+</body>
+</html>

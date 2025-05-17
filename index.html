@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURSE REGISTRATION SYSTEM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding-top: 70px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            margin: auto;
+            width: fit-content;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .button-container {
+                flex-direction: row;
+            }
+        }
+
+        button {
+            background-color: #595d5e;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2f3031;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>COURSE REGISTRATION SYSTEM</h2>
+        <div class="button-container">
+            <a href="register.html"><button>Register a Course</button></a>
+            <a href="availcourses.html"><button>Available Courses</button></a>
+            <a href="enrolled.html"><button>Enrolled Students</button></a>
+        </div>
+    </div>
+</body>
+</html>

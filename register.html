@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register a Course</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #a0522d;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff8f0;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            background-color: burlywood;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d2a86f;
+        }
+
+        .success-message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upgrade your career with this course</h1>
+
+    <form action="http://localhost:8080/courses/register" method="post" onsubmit="showMessage()">
+        <label for="name">Enter your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="emailId">Enter your Email Id:</label>
+        <input type="email" id="emailId" name="emailId" required>
+
+        <label for="course">Choose Your Course:</label>
+        <select id="course" name="courseName" required>
+            <option value="" disabled selected>Select a course</option>
+            <option value="Java Essentials">Java Essentials</option>
+            <option value="Python for ML">Python for ML</option>
+            <option value="Spring Boot">Spring Boot</option>
+            <option value="AI">AI</option>
+            <option value="Frontend">Frontend</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p class="success-message" id="successMsg">Registration submitted successfully!</p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("successMsg").style.display = "block";
+        }
+    </script>
+</body>
+</html>
